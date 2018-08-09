@@ -1,3 +1,4 @@
+/*杨辉三角*/
 package main
 
 const lens int = 10

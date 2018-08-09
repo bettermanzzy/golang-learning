@@ -1,3 +1,4 @@
+/*文件处理基本操作*/
 package main
 
 import (
@@ -11,6 +12,7 @@ func check(e error){
 		panic(e)
 	}
 }
+/*文件处理两种方式，os,io/ioutil，处理操作包含文件的读写，增删减改*/
 func main (){
 	f1,err := os.Create("test.txt")
 	check(err)

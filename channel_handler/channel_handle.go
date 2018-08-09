@@ -1,3 +1,4 @@
+/*channel基本操作*/
 package main
 
 import "fmt"
@@ -23,11 +24,12 @@ func process(req *request){
 }
 
 func main(){
+        /*int类型chan读写操作*/
 	chanint :=make(chan int ,10)
 	chanint <- 10
 	 a := <- chanint
 	fmt.Println(a)
-
+        //map类型chan读写操作
 	 chanmap := make(chan map[string]string,10)
 	 n :=map[string]string{"1":"lnxdle","2":"qbkdk","3":"bdkjwkd"}
 	 m := make(map[string]string,20)
@@ -39,25 +41,25 @@ func main(){
 	 b :=<-chanmap
 	 d :=<-chanmap
 	 fmt.Println(b,d)
-
+        //结构体chan读写操作
 	 chanstu := make(chan st , 10)
 	 a1 := st{ "zhangsan",}
 	 chanstu <- a1
 	 b1 := <- chanstu
 	 fmt.Println(b1)
-
+        //结构体地址chan读写操作
 	 chanstuid := make(chan *st,10)
 	 a2 :=&st{"12365456"}
 	 chanstuid <- a2
 	 b2 := <- chanstuid
 	 fmt.Println(*b2)
-
+        //接口chan读写操作
 	 chaninter := make(chan interface{},10)
 	 a3 := st{"123"}
 	 chaninter  <- &a3
 	 a4 := <- chaninter
 	 fmt.Println("*********",a4)
-
+          
 	 var stt *st
 	 stt ,ok :=a4.(*st)
 	 if !ok{
@@ -65,7 +67,7 @@ func main(){
 		 return
 	 }
 	 fmt.Println(*stt)
-
+        //chan遍历
 	 ch :=make(chan int ,11)
 	 ch<-99
 	 for i:=0;i<10;i++{

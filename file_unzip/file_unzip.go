@@ -1,3 +1,4 @@
+/*程序默认本地压缩文件为test.zip，用于修改压缩文件的内容，并生成符合要求的新型压缩文件*/
 package main
 
 import (
@@ -71,57 +72,3 @@ func main (){
 	name :=zipfile(filename1)
 	fmt.Printf("修改后的压缩文件为：%s\n",name)
 }
-
-
-
-/*func main() {
-	red, err := zip.OpenReader("test.zip")
-	if err != nil {
-		fmt.Println(err)
-	}
-	red.
-	for _, fil := range red.File {
-		f, _ := fil.Open()
-		fmt.Println(fil.Name)
-		str := make([]byte, 100)
-		f.Read(str)
-		//fmt.Println(str)
-		fmt.Println(str)
-		for i := 0; i < len(str); i++ {
-			if str[i] == 114 && str[i+1] == 32 && str[i+2] >= 48 && str[i+2] <= 57 {
-				str[i] = 42
-				str[i+1] = 42
-				str[i+2] = 42
-				i = i + 2
-			}
-		}
-		fmt.Println(str)
-		sst := string(str)
-		fmt.Println(sst)
-		f.Close()
-
-		f1, err := os.Create(fil.Name)
-		if err != nil {
-			fmt.Println(err)
-		}
-		f1.WriteString(sst)
-		f1.Close()
-	}
-	ff,err :=os.Create("test3.zip")
-	w :=zip.NewWriter(ff)
-    for _,name  := range []string{"a.txt","b.txt"}{
-    	fw,_ := w.Create(name)
-    	fcontent,err :=ioutil.ReadFile(name)
-    	if err !=nil{
-    		fmt.Println(err)
-		}
-    	fw.Write(fcontent)
-
-	}
-    w.Flush()
-    w.Close()
-    ff.Close()
-
-    os.Remove("a.txt")
-    os.Remove("b.txt")
-}*/

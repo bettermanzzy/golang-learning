@@ -1,3 +1,4 @@
+/*获取多个URL内容*/
 package main
 
 import (

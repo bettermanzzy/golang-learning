@@ -1,3 +1,4 @@
+/*字符串基本操作*/
 package main
 
 import (
@@ -11,6 +12,7 @@ func check(err error){
 		panic(err)
 	}
 }
+/*字符串前缀，后缀，索引，包含，替换，子串计数、重复，查找，切分，大小写转换，类型转换，连接*/
 func main(){
 	str := "WERTYUI  ASDFGHJK  ZXCVBNM 4567"
 	fmt.Println(str)
